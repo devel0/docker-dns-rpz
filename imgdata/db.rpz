@@ -1,0 +1,27 @@
+$TTL 600
+@            IN    SOA  localhost. root.localhost.  (
+                          2015112501   ; serial
+                          1h           ; refresh
+                          30m          ; retry
+                          1w           ; expiry
+                          30m)         ; minimum
+                   IN     NS    localhost.
+
+;
+; my.local
+;
+dns.my.local				A	172.18.0.2
+
+nginx.my.local				A	172.19.0.2
+dc01.my.local				A	172.19.0.10
+
+my.local				CNAME	dc01.my.local.
+
+;
+; example.com
+;
+dns.example.com					A	172.18.0.2
+
+nginx.example.com				A	172.19.0.2
+example.com					A	xxx.yyy.zzz.www
+example.com					MX	10	mail.example.com

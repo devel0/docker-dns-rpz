@@ -1,0 +1,23 @@
+options
+{
+	directory "/var/cache/bind";
+
+#	listen-on { 192.168.10.200; };
+
+	forwarders
+	{
+		# domain controller (if any)
+		172.19.0.10;
+	};
+
+        allow-query
+	{
+		10.0.0.0/8;
+		172.16.0.0/12;
+		192.168.0.0/16;
+                127.0.0.1;
+        };
+
+	response-policy { zone "rpz"; };
+};
+
